@@ -1,0 +1,11 @@
+# Dependencies for rag/build-samples/corpus-chunking.ipynb
+# (the notebook is still empty, so this is based on the planned semantic chunking pipeline)
+#   pip install -r rag/build-samples/requirements.txt
+
+numpy>=2.0           # similarity matrices, sliding-window embedding averages
+scipy>=1.13          # smoothing the similarity curve + valley (boundary) detection
+requests>=2.31       # Ollama /api/embed (bge-m3), same endpoint as rag/lib.ts
+tokenizers>=0.20     # count tokens with the real bge-m3 tokenizer (512-1024 token bounds)
+huggingface_hub>=0.25  # lets Tokenizer.from_pretrained("BAAI/bge-m3") download tokenizer.json
+tqdm>=4.66           # progress bar for embedding ~12k lines
+ipykernel>=6.29      # run the notebook
